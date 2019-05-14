@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'redux-bundler-react';
 
-function App( route ) {
+function App({ route }) {
   const Route = route;
   return (
     <>
