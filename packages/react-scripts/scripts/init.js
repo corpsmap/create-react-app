@@ -195,6 +195,19 @@ module.exports = function(
     }
   }
 
+  // Install our custom dependencies for CorpsMap
+  const pkgs = ['install', '--save', verbose && '--verbose'].filter(e => e);
+  // List custom dependencies here
+  pkgs.push('redux-bundler', 'redux-bundler-react');
+  if(pkgs.length){
+    console.log(`Installing ${pkgs.length - 2} CorpsMap Dependency Packages`);
+    const proc = spawn.sync(command, pkgs, { stdio: 'inherit' });
+    if (proc.status !== 0) {
+      console.error(`\`${command} ${pkgs.join(' ')}\` failed`);
+      return;
+    }
+  }
+
   if (useTypeScript) {
     verifyTypeScriptSetup();
   }

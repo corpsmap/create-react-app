@@ -1,10 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { Provider } from 'redux-bundler-react';
+import createStore from './app-bundles';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// Import our root component for the application
+import App from './App';
+
+// Import css here, to use a theme, update the link to point at that theme
+import './css/bootstrap/css/bootstrap.min.css';
+import './css/index.css';
+
+// Create the store to hold all of our data
+const store = createStore();
+
+// Render our app with the Provider at the top level
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>, 
+  document.getElementById('root')
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
