@@ -198,7 +198,7 @@ module.exports = function(
   // Install our custom dependencies for CorpsMap
   const pkgs = ['install', '--save', verbose && '--verbose'].filter(e => e);
   // List custom dependencies here
-  pkgs.push('redux-bundler', 'redux-bundler-react');
+  pkgs.push('redux-bundler', 'redux-bundler-react', 'money-clip');
   if(pkgs.length){
     console.log(`Installing ${pkgs.length - 2} CorpsMap Dependency Packages`);
     const proc = spawn.sync(command, pkgs, { stdio: 'inherit' });
