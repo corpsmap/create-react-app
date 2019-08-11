@@ -1,6 +1,6 @@
 {
   "name": "@corpsmap/corpsmap-react-scripts",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Custom CorpsMap configuration and scripts for Create React App.",
   "repository": {
     "type": "git",
